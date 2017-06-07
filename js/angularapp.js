@@ -70,11 +70,11 @@ var app = angular.module("app", ["ngRoute"]);
     $.ajax({
     url: "https://formspree.io/araxainox@gmail.com", 
     method: "POST",
-    data: {message: "Nome: "+ mail.nome + "\n" +
-                    "Email: "+ mail.email + "\n" +
-                    "Telefone: "+ mail.telefone + "\n" +
-                    "Asunto: "+ mail.asunto + "\n" +
-                    "Mensagem: "+ mail.mensagem},
+    data: {message: "Nome: "+ $scope.mail.nome + "\n" +
+                    "Email: "+ $scope.mail.email + "\n" +
+                    "Telefone: "+ $scope.mail.telefone + "\n" +
+                    "Asunto: "+ $scope.mail.asunto + "\n" +
+                    "Mensagem: "+ $scope.mail.mensagem},
     dataType: "json"
 }).done(function(resp){
       console.log("success");
