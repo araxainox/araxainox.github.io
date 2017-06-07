@@ -67,6 +67,9 @@ var app = angular.module("app", ["ngRoute"]);
   
   app.controller("ContatoController", function($scope) {
     $scope.mail = {nome: "", email: "", telefone: "", asunto: "", mensagem: ""};
+    $scope.submit = function(event){
+      
+  event.preventDefault();
     $.ajax({
     url: "https://formspree.io/araxainox@gmail.com", 
     method: "POST",
@@ -81,7 +84,8 @@ var app = angular.module("app", ["ngRoute"]);
     }).fail(function(error){
       console.log("fail");
     });
-});
+    };
+    });
     app.config(function($routeProvider) {
       $routeProvider
         .when('/', {
