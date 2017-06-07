@@ -77,7 +77,7 @@ var app = angular.module("app", ["ngRoute"]);
                     "Email: "+ $scope.mail.email + "\n" +
                     "Telefone: "+ $scope.mail.telefone + "\n" +
                     "Asunto: "+ $scope.mail.asunto + "\n" +
-                    "Mensagem: "+ $scope.mail.mensagem, _replyTo: $scope.mail.email},
+                    "Mensagem: "+ $scope.mail.mensagem, _replyto: $scope.mail.email},
     dataType: "json"
 }).done(function(resp){
       console.log("success");
