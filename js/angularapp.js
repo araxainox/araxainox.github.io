@@ -66,6 +66,21 @@ var app = angular.module("app", ["ngRoute"]);
 });
   
   app.controller("ContatoController", function($scope) {
+    $scope.mail = {nome: "", email: "", telefone: "", asunto: "", mensagem: ""};
+    $.ajax({
+    url: "https://formspree.io/araxainox@gmail.com", 
+    method: "POST",
+    data: {message: "Nome: "+ mail.nome + "\n" +
+                    "Email: "+ mail.email + "\n" +
+                    "Telefone: "+ mail.telefone + "\n" +
+                    "Asunto: "+ mail.asunto + "\n" +
+                    "Mensagem: "+ mail.mensagem},
+    dataType: "json"
+}).done(function(resp){
+      console.log("success");
+    }).fail(function(error){
+      console.log("fail");
+    });
 });
     app.config(function($routeProvider) {
       $routeProvider
